@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ DEVS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/omo3.png" class="logo" alt="Logo">
+            <ul>
+                   <li><a href="features.html">Features</a></li>
+                   <li><a href="mailto:ojafolayan@gmail.com">Email</a></li>
+                <li><a href="https://wa.me/+2349064597412" target="_blank">📱 Whatsapp</a></li>
+            </ul>
+            <div>
+                <a href="login.html" class="login-btn">Log in</a>
+                <a href="signup.html" class="btn">Sign Up</a>
+                <a href="#" class="btn">Download App</a>
+            </div>
+			<button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        </nav>
+        <div class="content">
+            <h1 class="anim">Welcome to my portfolio</h1>
+			<h2 class="slogan anim"><span class="typewriter">FROM IDEAS TO INTERFACES</span></h2>
+            <p class="anim">Here I will be posting my works. Feel free to check them out. I also code and create web pages and logo designs. Feel free to contact me.</p>
+            <a href="tel:+2349064597412" class="btn call-btn anim">📞 Call Now</a>
+			
+        </div>
+    </div>
+
+	<script>
+    const toggle = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userTheme = localStorage.getItem('theme');
+
+    // Apply saved or system theme
+    if (userTheme === 'dark' || (!userTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        toggle.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>
