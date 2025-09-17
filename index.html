@@ -22,24 +22,16 @@
         <ul>
           <li><a href="features.html">Features</a></li>
           <li><a href="mailto:ojafolayan@gmail.com">Email</a></li>
+           <li><a href="about.html">About</a></li>
           <li><a href="https://wa.me/+2349064597412" target="_blank">📱 Whatsapp</a></li>
         </ul>
-        <div class="mobile-auth">
-          <a href="login.html" class="login-btn">Log in</a>
-          <a href="signup.html" class="btn">Sign Up</a>
-          <a href="#" class="btn">Download App</a>
-        </div>
       </div>
       <ul class="nav-links desktop-only">
         <li><a href="features.html">Features</a></li>
         <li><a href="mailto:ojafolayan@gmail.com">Email</a></li>
         <li><a href="https://wa.me/+2349064597412" target="_blank">📱 Whatsapp</a></li>
+         <li><a href="about.html">About</a></li>
       </ul>
-      <div class="auth-links desktop-only">
-        <a href="login.html" class="login-btn">Log in</a>
-        <a href="signup.html" class="btn">Sign Up</a>
-        <a href="#" class="btn">Download App</a>
-      </div>
       <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
     </nav>
     <div class="content">
@@ -51,28 +43,53 @@
   </div>
 
   <!-- 🧊 Portfolio Section -->
-  <section class="portfolio-section">
-    <h2>My Work</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card" onclick="openLightbox('images/project 1.png', 'Landing Page Design', 'A modern responsive landing page built with HTML, CSS, and JS.')">
-        <img src="images/project 1.png" alt="Project 1">
-        <div class="card-content">
-          <h3>Landing Page Design</h3>
-          <p>Modern responsive landing page built with HTML/CSS/JS.</p>
-          <a href="#" class="btn">View</a>
-        </div>
-      </div>
+<section class="portfolio-section">
+  <h2>My Work</h2>
+  <div class="portfolio-grid">
 
-      <div class="portfolio-card" onclick="openLightbox('images/project2.jpg', 'Logo Design', 'Custom logo design for a Church service using Photoshop.')">
-        <img src="images/project2.jpg" alt="Project 2">
-        <div class="card-content">
-          <h3>Logo Design</h3>
-          <p>Custom logo design for a Church service using Photoshop.</p>
-          <a href="#" class="btn">View</a>
-        </div>
+    <!-- Project 1 -->
+    <div class="portfolio-card" onclick="openLightbox('images/project 1.png', 'Landing Page Design', 'A modern responsive landing page built with HTML, CSS, and JS.')">
+      <img src="images/project 1.png" alt="Project 1">
+      <div class="card-content">
+        <h3>Daily Bible Quotes</h3>
+        <p>Modern responsive bible quotes built with HTML/CSS/JS and a personal api library.</p>
+        <a href="#" class="btn">View</a>
       </div>
     </div>
-  </section>
+
+    <!-- Project 2 -->
+    <div class="portfolio-card" onclick="openLightbox('images/project2.jpg', 'Logo Design', 'Custom logo design for a Church service using Photoshop.')">
+      <img src="images/project2.jpg" alt="Project 2">
+      <div class="card-content">
+        <h3>Logo Design</h3>
+        <p>Custom logo design for a Church service using Photoshop.</p>
+        <a href="#" class="btn">View</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="portfolio-card" onclick="openLightbox('images/project 3.png', 'Church Website', 'Custom church website using HTML, CSS, and JS.')">
+      <img src="images/project 3.png" alt="Project 3">
+      <div class="card-content">
+        <h3>Church Website</h3>
+        <p>Custom church website using HTML, CSS, and JS.</p>
+        <a href="#" class="btn">View</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="portfolio-card" onclick="openLightbox('images/project 4.png', 'Phishing Detection Tool', 'Interactive phishing detection tool built with JS.')">
+      <img src="images/project 4.png" alt="Project 4">
+      <div class="card-content">
+        <h3>Phishing Detection Tool</h3>
+        <p>Interactive phishing detection tool built with JS.</p>
+        <a href="#" class="btn">View</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- 🔍 Lightbox Popup -->
   <div id="lightbox" class="lightbox">
@@ -93,6 +110,9 @@
         document.documentElement.classList.add('dark');
         toggle.textContent = '☀️';
     }
+    {
+  toggle.textContent = '🌙';
+}
     toggle.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
         const isDark = document.documentElement.classList.contains('dark');

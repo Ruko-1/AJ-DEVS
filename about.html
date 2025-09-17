@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>About Me - AJ Devs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hero">
+    <nav>
+      <img src="images/omo3.png" class="logo" alt="Logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="mailto:ojafolayan@gmail.com">Email</a></li>
+        <li><a href="https://wa.me/+2349064597412" target="_blank">📱 Whatsapp</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+
+    <section class="about-section centered">
+         <div class="portfolio-card about-me"></div>
+      <h1  class="section-title">About Me</h1>
+      <p class="about-text">
+        Hello, I’m <span class="highlight">AJ</span> — a creative and passionate 
+        web developer who transforms <span class="highlight">ideas</span> into 
+        interactive <span class="highlight">interfaces</span>.  
+        <br><br>
+        I enjoy building clean, responsive, and modern websites while exploring 
+        creative design elements. My mission is to combine 
+        <span class="highlight">creativity</span> and <span class="highlight">technology</span> 
+        to deliver work that stands out.
+      </p>
+    </section>
+
+  <section class="about-section centered">
+  <h2 class="section-title">Why Choose Me?</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="card-content">
+        <h3>Creative & Modern Designs</h3>
+        <p>I craft sleek, visually appealing websites tailored to your brand and users.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-content">
+        <h3>Responsive & Fast</h3>
+        <p>Every site I build is mobile-friendly and optimized for speed on all devices.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-content">
+        <h3>Client-Focused Approach</h3>
+        <p>I work closely with clients, ensuring their vision is brought to life with care.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-content">
+        <h3>Affordable & Reliable</h3>
+        <p>High-quality websites at reasonable rates, with ongoing support when needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark' || (!userTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        toggle.textContent = '☀️';
+    }
+    {
+  toggle.textContent = '🌙';
+}
+    toggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        toggle.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+</script>
+
+
+
+  </div>
+</body>
+</html>
